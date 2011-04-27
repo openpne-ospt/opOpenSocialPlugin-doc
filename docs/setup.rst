@@ -13,7 +13,7 @@ opOpenSocialPlugin を正常に動作させるには、OpenPNE3が必要な環�
 署名用の鍵を作成する
 ====================
 
-SNSが、アプリケーション開発者のサーバなどにHTTPリクエストを送信する際は、:ref:`署名<signature>` (OAuth Signature)をリクエストパラメータやHTTPヘッダに付加します。その際に、RSA秘密鍵とCSRが必要になるため、事前に作成する必要があります。
+SNSが、アプリケーション開発者のサーバなどにHTTPリクエストを送信する際は、 :ref:`署名<signature>` (OAuth Signature)をリクエストパラメータやHTTPヘッダに付加します。その際に、RSA秘密鍵とCSRが必要になるため、事前に作成する必要があります。
 
 以下の手順で作成することが出来ます。
 
@@ -25,7 +25,7 @@ OpenPNEのディレクトリのトップに移動し、以下のタスクを実�
 
 秘密鍵とCSRの作成に必要な情報（有効期限、キーフレーズ、国コード、所在地など）等を入力します。入力が終わると、 *plugins/opOpenSocialPlugin/certs* 下に鍵が作成されます。また、 http://sns.example.com/opensocial/certificates でCSRを見ることが出来ます。
 
-署名の検証法は こちら を御覧下さい。
+署名の検証法は :ref:`こちら<signature>` を御覧下さい。
 
 
 定期的にライフサイクルイベントを送信するようにする
