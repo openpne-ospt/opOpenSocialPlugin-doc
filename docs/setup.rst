@@ -31,32 +31,41 @@ OpenPNEのディレクトリのトップに移動し、以下のタスクを実�
 定期的にライフサイクルイベントを送信するようにする
 ==================================================
 
-opOpenSocialPlugin ではライフサイクルイベントによるリクエストに対応していますが、特定のイベントが発生した時にはリクエストは送信されません。特定のイベントが発生したときはキューに蓄積され、特定のタスクが実行されたときに一度にリクエストします。
+opOpenSocialPlugin ではライフサイクルイベントによるリクエストに対応していますが、特定のイベントが発生した時点ではすぐにリクエストは送信されません。特定のイベントが発生したときはキューに蓄積され、定期的に実行されるタスクによって一度に送信されます。
 
-よってSNS設置者は以下を、cronなどで定期的に実行する必要があります。
+ライフサイクルイベントの送信をするためには、SNS設置者が ``/etc/crontab`` 等に以下のような行を追加する必要があります。
 
 ::
 
-  cd #OPENPNE_DIR# && php symfony opOpenSocial:execute-lifecycle-event
+  0 * * * * root cd #OPENPNE_DIR# && php symfony opOpenSocial:execute-lifecycle-event --limit-request=1000
 
 **#OPENPNE_DIR#** はOpenPNEのディレクトリを指定して下さい。
 
-オプションとして、1回の実行ごとのリクエスト数を制限することが出来ます。 --limit-request で数値を指定すると、リクエスト数の上限を設定することができます。また、 --limit-request-app に数値を指定することにより、アプリごとのリクエスト数の上限を設定することができます。負荷の状況などにあわせて設定して下さい。
+このタスクの実行で大量のリクエストを処理すると、送信元のサーバーに極端な負荷が掛かる場合があります。これを防止するために、オプションで1回ごとに送出されるリクエストの数を制限することができます。負荷の状況などにあわせて設定して下さい。
 
-コンテナサーバーを外部にする
-============================
+--limit-request=N       1回の実行ごとに送信されるリクエスト数の上限
+--limit-request-app=N   1つのアプリごとに送信されるリクエスト数の上限
 
-ガジェットアプリやAPIはOpenPNE3にopOpenSocialPluginを導入することで利用できます。ただし、そのまま本番環境での利用は問題があります。なぜならば、初期の状態では、JavaScriptのコードを含むガジェットアプリケーションを表示するコンテナが同一ドメイン上で実行されるため、セキュリティ上の問題が起きる可能性が生じます。よって、本番運用では外部ドメイン上にコンテナサーバを設置する必要があるのです。
+``--limit-request-app`` オプションは、特定のアプリに対してライフサイクルイベントが大量に溜まっている状況などに有効です。
 
-そこで、いくつかの設定により、コンテナサーバを別に用意することができます。
+コンテナサーバーを外部に設置する
+================================
 
-その場合、SNSサーバ・コンテナサーバは共に、PHPのmcrypt拡張, curl拡張, openssl拡張を導入している必要があります。
+ガジェットアプリやAPIはOpenPNE3にopOpenSocialPluginを導入することで利用できます。ただし、本番環境での利用にはそのままでは問題があります。なぜならば、初期の状態では、JavaScriptのコードを含むガジェットアプリケーションがOpenPNE3と同一ドメイン上で実行されるため、セキュリティ上の問題が起きる可能性が生じてしまいます。よって、本番運用ではコンテナサーバを外部ドメイン上に設置する必要があるのです。
+
+コンテナサーバーを外部に設置するためにはいくつか設定を行う必要があります。その場合、SNSサーバ・コンテナサーバは共に、PHPのmcrypt拡張, curl拡張, openssl拡張を導入している必要があります。
 
 opOpenSocialPluginで、対応しているコンテナはShindig-1.1-BETA5以上を必要としています。
 
-Shindig-1.1-BETA5を利用する場合、Subversionにて http://svn.apache.org/repos/asf/shindig/tags/shindig-project-1.1-BETA5-incubating/ から、Shindig をチェックアウトし、 http://incubator.apache.org/shindig/developers/php/build.html に従い導入してください。
+Shindig-1.1-BETA5を利用する場合、 http://incubator.apache.org/shindig/developers/php/build.html に従い下記のようにセットアップして下さい。
 
-また、上記で作成した鍵はShindigのディレクトリの *php/certs/* へコピーして下さい。
+:: 
+
+  $ mkdir /var/www/html/shindig
+  $ cd /var/www/html/shindig
+  $ svn co http://svn.apache.org/repos/asf/shindig/tags/shindig-project-1.1-BETA5-incubating/ .
+
+また、 `署名用の鍵を作成する`_ で作成した鍵はShindigのディレクトリの *php/certs/* へコピーして下さい。
 
 OpenPNEの設定
 -------------
