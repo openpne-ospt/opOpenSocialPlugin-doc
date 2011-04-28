@@ -77,6 +77,8 @@ OpenPNEの管理画面から、プラグイン設定 > opOpenSocialPluginの設�
 
 「外部のOpenSocialコンテナを利用(推奨)」にチェックを入れ、OpenSocialコンテナURLに、上記で用意したコンテナのURLを設定します。
 
+.. image:: images/backend_container.png
+
 設定変更後、「Download openpne.js」が表示されます。そのファイルをダウンロードし、 Shindigのディレクトリの *config/* 内に設置してください。
 
 このファイルは、利用できるプロフィール項目の情報を含むためプロフィールを追加、削除した場合は再度上書きするようにしてください。
