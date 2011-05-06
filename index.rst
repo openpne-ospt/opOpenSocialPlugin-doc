@@ -24,6 +24,7 @@ OpenSocial with OpenPNE
    :maxdepth: 2
 
    docs/setup
+   docs/use_application
 
 
 
