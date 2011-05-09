@@ -36,9 +36,27 @@ OpenSocial with OpenPNE
 
    docs/signature
    docs/gadget
-   docs/javascript_api
-   docs/restful_api
    docs/lifecycle_event
+
+JavaScript API
+~~~~~~~~~~~~~~
+
+.. toctree::
+   :maxdepth: 2
+
+   docs/javascript_api
+
+RESTful API
+~~~~~~~~~~~
+
+.. toctree::
+   :maxdepth: 2
+
+   docs/restful_api
+   docs/restful_people
+   docs/restful_activities
+   docs/restful_appdata
+   docs/restful_albums
 
 License
 =======
