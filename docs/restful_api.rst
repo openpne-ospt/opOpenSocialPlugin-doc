@@ -171,14 +171,21 @@ gender
 アプリの活動状況等を共有する仕組みとしてアクティビティが存在します。
 
 
-対応URL Fragment
-----------------
+URL Fragment
+------------
 
-::
+.. 動作確認未完了
 
-  POST /activities/@me/@self
-  GET /activities/{guid}/{selecter}
-  GET /activities/{guid}/{selecter}/{appid}
+=====================================================   ==================================================================================
+``GET /activities/{guid}/@self``                        {guid} のアクティビティ
+``GET /activities/{guid}/@self/{appid}``                {appid} によって投稿された {guid} のアクティビティ
+``GET /activities/{guid}/@friends``                     {guid} のフレンドのアクティビティ
+``GET /activities/{guid}/@friends/{appid}``             {appid} によって投稿された {guid} のフレンドのアクティビティ
+``GET /activities/{guid}/{groupid}``                    {uid} の属している {groupid} のメンバーのアクティビティ
+``GET /activities/{guid}/{groupid}/{appid}``            {appid} によって投稿された {uid} の属している {groupid} のメンバーのアクティビティ
+``GET /activities/{guid}/@self/{appid}/{activityid}``   指定されたアクティビティ (1 件) の取得
+``GET /activities/@supportedFields``                    Activity オブジェクトでサポートされているフィールドの一覧
+=====================================================   ==================================================================================
 
 例
 --
