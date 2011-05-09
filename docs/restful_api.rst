@@ -46,22 +46,32 @@ OpenPNE上のOAuth認可については、 http://sandbox.ebihara.dazai.pne.jp/o
 
 レスポンスの形式は、JSON・XML・ATOMに対応しています。それぞれリクエストのformatパラメータに、json, xml, atomを設定することにより形式を切り替えることができます。指定しない場合はJSONになります。
 
+共通のパラメータ
+================
+
+.. まだ実際の動作の確認ができてない
+
 メンバー情報の取得
 ==================
 
-対応URI Fragment
-----------------
+URI Fragment
+------------
 
-::
-
-  GET /people/{guid}/@self
-  GET /people/{guid}/@friends
+================================= ======================================================================================
+``GET /people/{guid}/@all``       **実装されていません** {guid} に関連するすべてのメンバー
+``GET /people/{guid}/@friends``   {guid} のすべてのフレンド
+``GET /people/{guid}/{groupid}``  **実装されていません** {guid} に関連し、{groupid} のグループに含まれるすべてのメンバー
+``GET /people/{guid}/@all/{pid}`` {guid} から見た {pid} のプロフィール情報
+``GET /people/{guid}/@self``      {guid} のプロフィール情報
+``GET /people/@me/@self``         アプリを実行中の自分自身のプロフィール情報
+``GET /people/@supportedFields``  **実装されていません** People オブジェクトでサポートされているフィールドの一覧
+================================= ======================================================================================
 
 *{guid}* はメンバーIDか、 @me を指定することができます。
   GET http://sns.example.com/api.php/social/rest/people/\ *{guid}*\ /\ *{selector}*
 
-例
---
+例1
+~~~
 
 GET http://sns.example.com/api.php/social/rest/people/@me/@self ::
 
@@ -77,11 +87,48 @@ GET http://sns.example.com/api.php/social/rest/people/@me/@self ::
     }
   }
 
+例2
+~~~
+
+GET http://sns.example.com/api.php/social/rest/people/@me/@friends ::
+
+  {
+    "entry": [
+      {
+        "displayName": "Alice",
+        "hasApp": false,
+        "id": "2",
+        "isOwner": false,
+        "isViewer": false,
+        "profileUrl": "http://sns.localhost/sqlite/member/2",
+        "thumbnailUrl": ""
+      },
+      {
+        "displayName": "Bob",
+        "hasApp": false,
+        "id": "3",
+        "isOwner": false,
+        "isViewer": false,
+        "profileUrl": "http://sns.localhost/sqlite/member/3",
+        "thumbnailUrl": ""
+      },
+      {
+        "displayName": "Carol",
+        "hasApp": false,
+        "id": "4",
+        "isOwner": false,
+        "isViewer": false,
+        "profileUrl": "http://sns.localhost/sqlite/member/4",
+        "thumbnailUrl": ""
+      }
+    ],
+    "itemsPerPage": 10,
+    "startIndex": 0,
+    "totalResults": 3
+  }
+
 取得可能フィールド
 ------------------
-
-必須
-~~~~
 
 id
   メンバーID
@@ -101,6 +148,8 @@ profileUrl
 オプション
 ~~~~~~~~~~
 
+上記のフィールド以外の情報を取得する場合は fields パラメータにフィールド名をカンマ区切りで指定します。このパラメータで指定できるフィールドは以下の通りです。
+
 aboutMe
   自己紹介
 addresses
@@ -114,10 +163,7 @@ languagesSpoken
 gender
   性別
 
-
-上記のオプションは、OpenPNE3.4 + opOpenSocialPlugin1.2.x のセットアップ直後に利用可能な項目です。
-
-必須情報意外の情報を取得する場合は、fields パラメータに項目名をカンマ区切りで指定してください。
+これらのオプションは、OpenPNE3.4 + opOpenSocialPlugin1.2.x のセットアップ直後に利用可能な項目です。
 
 アクティビティ
 ==============
