@@ -6,13 +6,30 @@
 
 opOpenSocialPluginでは、opAlbumPluginと連動してアルバムの情報を取得することができます。opAlbumPluginが導入されていない場合はこの機能は利用できません。
 
-対応URI Fragment
-================
+URI Fragment
+============
 
-::
+Albums API
+~~~~~~~~~~
 
-  GET /albums/{guid}/{selector}
-  GET /mediaitems/{guid}/{selector}/{albumId}
+======================================  ===============================================
+``GET /albums/@me/@self``               アルバムの一覧を取得する
+``POST /albums/@me/@self``              **実装されていません** 新しいアルバムを作成する
+``GET /albums/@me/@self/{albumId}``     **実装されていません** {albumId} を取得する
+``PUT /albums/@me/@self/{albumId}``     **実装されていません** {albumId} を更新する
+``DELETE /albums/@me/@self/{albumId}``  **実装されていません** {albumId} を削除する
+======================================  ===============================================
+
+MediaItems API
+~~~~~~~~~~~~~~
+
+========================================================  ==========================================================================
+``GET /mediaitems/@me/@self/{albumId}``                   {albumId} に含まれるメディアの一覧を取得する
+``POST /mediaitems/@me/@self/{albumId}``                  **実装されていません** {albumId} に新しくメディアを追加する
+``GET /mediaitems/@me/@self/{albumId}/{mediaItemId}``     **実装されていません** {albumId} に含まれる {mediaItemId} の内容を取得する
+``PUT /mediaitems/@me/@self/{albumId}/{mediaItemId}``     **実装されていません** {albumId} に含まれる {mediaItemId} を更新する
+``DELETE /mediaitems/@me/@self/{albumId}/{mediaItemId}``  **実装されていません** {albumId} に含まれる {mediaItemId} を削除する
+========================================================  ==========================================================================
 
 例
 ==
@@ -73,4 +90,9 @@ GET http://sns.example.com/api.php/social/rest/mediaitems/@me/@self/1 ::
     "totalResults":1,
     "itemsPerPage":20
   }
+
+注意事項
+========
+
+opAlbumPlugin がインストールされていない場合は対応しているURIの形式であっても Not implemented が返ります。
 
