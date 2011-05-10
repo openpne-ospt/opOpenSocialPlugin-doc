@@ -73,7 +73,7 @@ OpenPNEの設定
 openpne.js
 ~~~~~~~~~~
 
-OpenPNEの管理画面から、プラグイン設定 > opOpenSocialPluginの設定 > コンテナ設定 にアクセスします。
+OpenPNEの管理画面から、 :menuselection:`プラグイン設定 --> opOpenSocialPluginの設定 --> コンテナ設定` にアクセスします。
 
 「外部のOpenSocialコンテナを利用(推奨)」にチェックを入れ、OpenSocialコンテナURLに、上記で用意したコンテナのURLを設定します。
 
