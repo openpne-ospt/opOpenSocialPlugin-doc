@@ -10,17 +10,16 @@
 URI Fragment
 ============
 
-.. 動作確認未完了
-
 =====================================================   ==================================================================================
 ``GET /activities/{guid}/@self``                        {guid} のアクティビティ
 ``GET /activities/{guid}/@self/{appid}``                {appid} によって投稿された {guid} のアクティビティ
 ``GET /activities/{guid}/@friends``                     {guid} のフレンドのアクティビティ
 ``GET /activities/{guid}/@friends/{appid}``             {appid} によって投稿された {guid} のフレンドのアクティビティ
-``GET /activities/{guid}/{groupid}``                    {uid} の属している {groupid} のメンバーのアクティビティ
-``GET /activities/{guid}/{groupid}/{appid}``            {appid} によって投稿された {uid} の属している {groupid} のメンバーのアクティビティ
-``GET /activities/{guid}/@self/{appid}/{activityid}``   指定されたアクティビティ (1 件) の取得
-``GET /activities/@supportedFields``                    Activity オブジェクトでサポートされているフィールドの一覧
+``GET /activities/{guid}/{groupid}``                    **実装されていません** {uid} の属している {groupid} のメンバーのアクティビティ
+``GET /activities/{guid}/{groupid}/{appid}``            **実装されていません** {appid} によって投稿された {uid} の属している {groupid} のメンバーのアクティビティ
+``GET /activities/{guid}/@self/{appid}/{activityid}``   **実装されていません** 指定されたアクティビティ (1 件) の取得
+``GET /activities/@supportedFields``                    **実装されていません** Activity オブジェクトでサポートされているフィールドの一覧
+``POST /activities/@me/@self``                          アクティビティを投稿する
 =====================================================   ==================================================================================
 
 例
