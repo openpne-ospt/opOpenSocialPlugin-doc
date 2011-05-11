@@ -77,6 +77,8 @@ GET http://sns.example.com/api.php/social/rest/people/@me/@friends ::
     "totalResults": 3
   }
 
+2 ページ目以降は :ref:`startIndex <rest_common_params>` パラメータを指定することで取得できます。
+
 取得可能フィールド
 ==================
 
@@ -98,7 +100,7 @@ profileUrl
 オプション
 ----------
 
-上記のフィールド以外の情報を取得する場合は fields パラメータにフィールド名をカンマ区切りで指定します。このパラメータで指定できるフィールドは以下の通りです。
+上記のフィールド以外の情報を取得する場合は :ref:`fields <rest_common_params>` パラメータにフィールド名をカンマ区切りで指定します。このパラメータで指定できるフィールドは以下の通りです。
 
 aboutMe
   自己紹介

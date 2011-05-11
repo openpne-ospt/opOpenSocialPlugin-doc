@@ -61,7 +61,7 @@ GET http://sns.example.com/api.php/social/rest/appdata/@me/@self/@app::
 
 DELETE http://sns.example.com/api.php/social/rest/appdata/@me/@self/@app?fields=foo1,foo2
 
-のようにfieldsパラメータにカンマ区切りでキーを指定するにより削除を行うことができます。
+のように :ref:`fields <rest_common_params>` パラメータにカンマ区切りでキーを指定するにより削除を行うことができます。
 
 fieldsパラメータが存在しない場合は、そのメンバーのアプリについての永続データが全て削除されます。
 
