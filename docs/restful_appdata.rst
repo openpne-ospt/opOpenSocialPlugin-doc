@@ -12,14 +12,17 @@
 
 **この機能は、アプリごとに発行したコンシューマキーを利用してAPIアクセスをする必要があります。**
 
-対応URI Fragment
-================
+URI Fragment
+============
 
-::
+========================================  ====================================================
+``GET /appData/{guid}/@self/{appid}``     {guid} に対する {appid} の永続データを取得
+``POST /appData/{guid}/@self/{appid}``    {guid} に対する {appid} の永続データを保存
+``DELETE /appData/{guid}/@self/{appid}``  {guid} に対する {appid} の永続データを削除
+``GET /appData/{guid}/@friends/{appid}``  {guid} のフレンドに対する {appid} の永続データを取得
+========================================  ====================================================
 
-  POST /appdata/@me/@self/@app
-  GET /appdata/{guid}/{selector}/@app
-  DELETE /appdata/@me/@self/@app
+{appid} には ``@app`` またはアプリの ID を指定します。使用したコンシューマキーに対応するアプリ以外の ID は指定できません。
 
 例
 ==
