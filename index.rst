@@ -47,7 +47,7 @@ APIリファレンス
 .. toctree::
    :maxdepth: 2
 
-   docs/restful_api
+   docs/restful_about
    docs/restful_people
    docs/restful_activities
    docs/restful_appdata
@@ -130,7 +130,7 @@ RESTful API
 .. toctree::
    :maxdepth: 2
 
-   docs/restful_api
+   docs/restful_about
    docs/restful_people
    docs/restful_activities
    docs/restful_appdata
