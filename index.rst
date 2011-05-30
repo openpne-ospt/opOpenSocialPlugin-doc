@@ -38,8 +38,16 @@ OpenSocial with OpenPNE
    docs/gadget
    docs/lifecycle_event
 
-JavaScript API
-~~~~~~~~~~~~~~
+軽量 JavaScript API (osapi.*)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. toctree::
+   :maxdepth: 2
+
+   docs/osapi_about
+
+JavaScript API (opensocial.*)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. toctree::
    :maxdepth: 2
