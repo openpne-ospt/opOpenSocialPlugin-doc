@@ -45,6 +45,7 @@ OpenSocial with OpenPNE
    :maxdepth: 2
 
    docs/osapi_about
+   docs/osapi_people
 
 JavaScript API (opensocial.*)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
