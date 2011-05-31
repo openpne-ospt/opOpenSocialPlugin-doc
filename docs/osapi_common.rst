@@ -2,10 +2,10 @@
 osapi.*
 =======
 
-.. _osapi.Request_single:
+.. _osapi.Request:
 
-osapi.Request (シングルリクエスト)
-==================================
+osapi.Request
+=============
 
 OSAPIで osapi.people.get() などを呼び出すと osapi.Request オブジェクトが生成されます。このオブジェクトを使用して取得を実行するためには ``execute()`` メソッドを呼び出す必要があります。
 
@@ -83,7 +83,7 @@ osapi.Request.execute()
   }
 
 使用例
-~~~~~~
+------
 
 .. code-block:: javascript
 
@@ -94,4 +94,85 @@ osapi.Request.execute()
       alert('現在フレンドは ' + data.totalResults + ' 人います'):
     }
   });
+
+バッチリクエスト
+================
+
+OSAPI のバッチリクエストでは、SNSに対して複数のリクエストを一度に送信することができます。
+
+osapi.newBatch()
+----------------
+
+.. js:function:: osapi.newBatch()
+
+  :return: osapi.BatchRequest オブジェクト
+
+新しいバッチリクエストのためのオブジェクトを作成します。
+
+osapi.BatchRequest.add()
+------------------------
+
+.. js:function:: osapi.BatchRequest.add(key, request)
+
+  :param String key: リクエスト完了時に結果を取得するためのキー
+  :param osapi.Request request: 実行するリクエスト
+  :return: osapi.BatchRequest オブジェクト
+
+バッチリクエストで処理するリクエストを追加します。このメソッドが ``osapi.BatchRequest`` を返しているのは、リクエストの追加をメソッドチェインで記述できるようにするためです。
+
+osapi.BatchRequest.execute()
+----------------------------
+
+.. js:function:: osapi.BatchRequest.execute(callback)
+
+  :param Function callback: コールバック関数
+
+バッチリクエストを実行します。
+
+使用例
+------
+
+OWNER と VIEWER のフレンドを一度に取得し、共通のフレンドを列挙するコードの例
+
+.. code-block:: javascript
+
+  osapi.newBatch()
+    .add('ownerFriends', osapi.people.getOwnerFriends({count: 100}))
+    .add('viewerFriends', osapi.people.getViewerFriends({count: 100}))
+    .execute(function (data) {
+      if (data.error || data.ownerFriends.error || data.viewerFriends.error) {
+        alert('取得に失敗しました');
+      }
+
+      var ownerFriends = data.ownerFriends.list;
+      var viewerFriends = data.viewerFriends.list;
+
+      var ownerPos = 0, viewerPos = 0;
+      var items = '';
+
+      while (true) {
+        var ownerPosId = ownerFriends[ownerPos] ? ownerFriends[ownerPos].id : Number.MAX_VALUE;
+        var viewerPosId = viewerFriends[viewerPos] ? viewerFriends[viewerPos].id : Number.MAX_VALUE;
+
+        if (ownerPosId === Number.MAX_VALUE && viewerPosId === Number.MAX_VALUE) {
+          break;
+        }
+
+        if (ownerPosId < viewerPosId) {
+          ownerPos++;
+        } else if (ownerPosId > viewerPosId) {
+          viewerPos++;
+        } else {
+          items += '<li>' + ownerFriends[ownerPos].displayName + '</li>\n';
+          ownerPos++;
+          viewerPos++;
+        }
+      }
+
+      document.getElementById('friendList').innerHTML = items;
+    });
+
+.. note::
+
+  実際にはフレンドが100人以上のメンバーも考慮する必要があるため、実装するためのコードはより長く複雑になります。
 
