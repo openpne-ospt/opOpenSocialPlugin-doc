@@ -79,6 +79,8 @@ GET http://sns.example.com/api.php/social/rest/people/@me/@friends ::
 
 2 ページ目以降は :ref:`startIndex <rest_common_params>` パラメータを指定することで取得できます。
 
+.. _people_api_fields:
+
 取得可能フィールド
 ==================
 
