@@ -18,7 +18,7 @@ osapi.people.get()
 
 メンバーの情報を取得します。デフォルトでは VIEWER 自身の情報が取得されます。
 
-このメソッドを実行しただけでは ``osapi.Request`` オブジェクトが返るだけでメンバー情報の取得は **行われません** 。取得方法は :ref:`osapi.Request` を参照して下さい。
+このメソッドを実行しただけでは ``osapi.Request`` オブジェクトが返るだけでメンバー情報の取得は **行われません** 。取得方法は :ref:`osapi.Request_single` を参照して下さい。
 
 パラメータ
 ----------
@@ -47,7 +47,7 @@ osapi.people.getViewer()
 
 VIEWER の情報を取得します。このメソッドは ``osapi.people.get({userId: '@viewer', groupId: '@self'})`` の短縮形です。
 
-このメソッドを実行しただけでは ``osapi.Request`` オブジェクトが返るだけでメンバー情報の取得は **行われません** 。取得方法は :ref:`osapi.Request` を参照して下さい。
+このメソッドを実行しただけでは ``osapi.Request`` オブジェクトが返るだけでメンバー情報の取得は **行われません** 。取得方法は :ref:`osapi.Request_single` を参照して下さい。
 
 osapi.people.getViewerFriends()
 ===============================
@@ -63,7 +63,7 @@ osapi.people.getViewerFriends()
 
 VIEWER の友人の情報を取得します。このメソッドは ``osapi.people.get({userId: '@viewer', groupId: '@friends'})`` の短縮形です。
 
-このメソッドを実行しただけでは ``osapi.Request`` オブジェクトが返るだけでメンバー情報の取得は **行われません** 。取得方法は :ref:`osapi.Request` を参照して下さい。
+このメソッドを実行しただけでは ``osapi.Request`` オブジェクトが返るだけでメンバー情報の取得は **行われません** 。取得方法は :ref:`osapi.Request_single` を参照して下さい。
 
 osapi.people.getOwner()
 =======================
@@ -76,7 +76,7 @@ osapi.people.getOwner()
 
 OWNER の情報を取得します。このメソッドは ``osapi.people.get({userId: '@owner', groupId: '@self'})`` の短縮形です。
 
-このメソッドを実行しただけでは ``osapi.Request`` オブジェクトが返るだけでメンバー情報の取得は **行われません** 。取得方法は :ref:`osapi.Request` を参照して下さい。
+このメソッドを実行しただけでは ``osapi.Request`` オブジェクトが返るだけでメンバー情報の取得は **行われません** 。取得方法は :ref:`osapi.Request_single` を参照して下さい。
 
 osapi.people.getOwnerFriends()
 ==============================
@@ -92,5 +92,5 @@ osapi.people.getOwnerFriends()
 
 OWNER の友人の情報を取得します。このメソッドは ``osapi.people.get({userId: '@owner', groupId: '@friends'})`` の短縮形です。
 
-このメソッドを実行しただけでは ``osapi.Request`` オブジェクトが返るだけでメンバー情報の取得は **行われません** 。取得方法は :ref:`osapi.Request` を参照して下さい。
+このメソッドを実行しただけでは ``osapi.Request`` オブジェクトが返るだけでメンバー情報の取得は **行われません** 。取得方法は :ref:`osapi.Request_single` を参照して下さい。
 
