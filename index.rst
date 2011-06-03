@@ -48,6 +48,8 @@ OpenSocial with OpenPNE
    docs/osapi_people
    docs/osapi_activities
    docs/osapi_appdata
+   docs/osapi_albums
+   docs/osapi_mediaitems
    docs/osapi_common
 
 JavaScript API (opensocial.*)
