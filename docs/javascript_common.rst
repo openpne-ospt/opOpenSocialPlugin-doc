@@ -45,16 +45,36 @@ opensocial.requestShareApp()
 .. js:function:: opensocial.requestShareApp(recipients, reason[, opt_callback[, opt_params]])
 
   :param opensocial.IdSpec recipients: リクエストの送信先
-  :param opensocial.Message reason: リクエストの送信理由 (ユーザーに対して表示される)
+  :param opensocial.Message reason: **実装されていません** リクエストの送信理由 (ユーザーに対して表示される)
   :param Function opt_callback: コールバック
   :param opensocial.NavigationParameters opt_params: **実装されていません** リクエストの作成時・承認時にユーザーを移動させるためのパラメータ
 
-``recipients`` で指定したユーザーにアプリを招待します。
+``recipients`` で指定したユーザーにアプリを招待します。 ``recipients`` には :js:class:`~opensocial.IdSpec` オブジェクト以外にも ``"VIEWER_FRIENDS"`` を指定することができます。
 
 送信前に下図のような送信先の選択画面 (``recipients`` に含まれるメンバーから送信先を選択できる) が表示されます。
 
 .. image:: images/requestshareapp.png
 
+コールバック関数の第一引数には :js:class:`opensocial.ResponseItem` オブジェクトが渡されます。このオブジェクトの :js:func:`~opensocial.ResponseItem.getData()` メソッドで、実際に招待が送信されたメンバーIDの配列を取得できます。また、重複送信などで誰にも招待が送られなかった場合は false が格納されます。
+
+選択画面でユーザーが送信をキャンセルした場合でもコールバック関数が呼ばれます。これを区別するためにはコールバック関数内で :js:func:`~opensocial.ResponseItem.hadError()` メソッドを使用してください。
+
+使用例
+------
+
+opensocial.requestShareApp() を使用してアプリの招待を行う例:
+
+.. code-block:: javascript
+
+  opensocial.requestShareApp("VIEWER_FRIENDS", null, function (data) {
+    if (data.hadError()) return; // キャンセルされた等
+
+    var invited = data.getData();
+
+    if (invited === false) return; // 重複などで誰にも送信されなかった場合
+
+    alert(invited.length + " 人のメンバーを招待しました");
+  });
 
 .. これより下は OpenSocial 1.0 以降で廃止
 
