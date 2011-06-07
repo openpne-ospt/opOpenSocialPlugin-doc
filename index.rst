@@ -56,6 +56,7 @@ JavaScript API (opensocial.*)
    :maxdepth: 2
 
    docs/javascript_api
+   docs/javascript_common
 
 RESTful API
 ~~~~~~~~~~~
