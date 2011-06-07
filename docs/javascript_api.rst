@@ -90,10 +90,9 @@ Gadget中でのメンバーの情報の取得は次のようになります。
 
 プロフィールのフィールド名は、 opensocial.Person.Field_ を参考にしてください。
 
-また、もしSNSがサポートしているプロフィール項目を調べたい場合は、 `opensocial.Environment.supportsField()`_ を利用してください。
+また、もしSNSがサポートしているプロフィール項目を調べたい場合は、 :js:func:`opensocial.Environment.supportsField()` メソッドを利用してください。
 
 .. _opensocial.Person.Field: http://wiki.opensocial.org/index.php?title=Opensocial.Person_%28v0.9%29#opensocial.Person.Field
-.. _`opensocial.Environment.supportsField()`: http://wiki.opensocial.org/index.php?title=Opensocial.Environment_%28v0.9%29#opensocial.Environment.supportsField
 
 永続データの保存・取得
 ======================
