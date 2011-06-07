@@ -61,6 +61,7 @@ JavaScript API (opensocial.*)
 
    docs/javascript_api
    docs/javascript_common
+   docs/javascript_environment
 
 RESTful API
 ~~~~~~~~~~~
