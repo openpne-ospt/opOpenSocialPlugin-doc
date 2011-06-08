@@ -24,4 +24,17 @@ supportsField()
   :param String fieldName: フィールド名
   :return: サポートされていれば true、そうでなければ false。
 
-指定されたフィールドがSNSでサポートされているかどうかを調べます。 ``objectType`` に指定できるパラメータの一覧は :js:class:`opensocial.Environment.ObjectType` を参照して下さい。
+``objectType`` で指定された種類のオブジェクトの ``fieldName`` がSNSでサポートされているかどうかを調べます。 ``objectType`` に指定できるパラメータの一覧は :js:class:`opensocial.Environment.ObjectType` を参照して下さい。
+
+.. note::
+  supportsField メソッドで true が返ってきたとしても、あくまで指定されたフィールドが SNS でサポートされているというだけで、メンバーがそのフィールドを公開設定にしていなければ取得することはできません。
+
+使用例
+------
+
+:js:class:`~opensocial.Person` オブジェクトの :js:data:`~opensocial.Person.Fields.DATE_OF_BIRTH` フィールドがサポートされているかどうかを調べる例:
+
+.. code-block:: javascript
+
+  opensocial.getEnvironment().supportsField(opensocial.Environment.ObjectType.PERSON, opensocial.Person.Fields.DATE_OF_BIRTH);
+
