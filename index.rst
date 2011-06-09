@@ -80,3 +80,9 @@ License
 =======
 
 この作品は、クリエイティブ・コモンズの表示 2.1 日本ライセンスの下でライセンスされています。この使用許諾条件を見るには、 http://creativecommons.org/licenses/by/2.1/jp/ をチェックするか、クリエイティブ･コモンズに郵便にてお問い合わせください。住所は：171 Second Street, Suite 300, San Francisco, California 94105, USA です。
+
+このドキュメントは OpenSocial and Gadgets Specification Group <opensocial-and-gadgets-spec@googlegroups.com> による「\ `OpenSocial Specification v0.9`_\ 」「\ `OpenSocial RESTful Protocol Specification v0.9`_\ 」を基にして作成されました。
+
+.. _OpenSocial Specification v0.9: http://www.opensocial.org/Technical-Resources/opensocial-spec-v09/OpenSocial-Specification.html
+.. _OpenSocial RESTful Protocol Specification v0.9: http://www.opensocial.org/Technical-Resources/opensocial-spec-v09/REST-API.html
+
