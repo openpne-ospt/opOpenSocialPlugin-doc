@@ -66,6 +66,7 @@ JavaScript API (opensocial.*)
    docs/javascript_navigationparameters
    docs/javascript_navigationparameters_destinationtype
    docs/javascript_navigationparameters_field
+   docs/javascript_permission
 
 RESTful API
 ~~~~~~~~~~~
