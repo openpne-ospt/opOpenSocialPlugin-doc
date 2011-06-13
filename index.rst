@@ -70,6 +70,8 @@ JavaScript API (opensocial.*)
    docs/javascript_datarequest
    docs/javascript_datarequest_activityrequestfields
    docs/javascript_datarequest_albumrequestfields
+   docs/javascript_datarequest_datarequestfields
+   docs/javascript_datarequest_filtertype
    docs/javascript_datarequest_mediaitemrequestfields
 
 RESTful API
