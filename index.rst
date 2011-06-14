@@ -74,6 +74,7 @@ JavaScript API (opensocial.*)
    docs/javascript_datarequest_filtertype
    docs/javascript_datarequest_mediaitemrequestfields
    docs/javascript_datarequest_peoplerequestfields
+   docs/javascript_datarequest_sortorder
 
 RESTful API
 ~~~~~~~~~~~
