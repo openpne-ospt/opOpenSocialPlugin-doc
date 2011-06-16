@@ -77,6 +77,7 @@ JavaScript API (opensocial.*)
    docs/javascript_datarequest_sortorder
    docs/javascript_dataresponse
    docs/javascript_responseitem
+   docs/javascript_responseitem_error
 
 RESTful API
 ~~~~~~~~~~~
