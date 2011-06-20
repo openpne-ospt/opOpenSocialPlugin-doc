@@ -75,6 +75,7 @@ JavaScript API (opensocial.*)
    docs/javascript_responseitem
    docs/javascript_responseitem_error
    docs/javascript_collection
+   docs/javascript_activity
 
 RESTful API
 ~~~~~~~~~~~
