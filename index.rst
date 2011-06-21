@@ -76,6 +76,7 @@ JavaScript API (opensocial.*)
    docs/javascript_responseitem_error
    docs/javascript_collection
    docs/javascript_activity
+   docs/javascript_activity_field
    docs/javascript_album
    docs/javascript_album_field
 
