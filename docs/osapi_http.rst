@@ -193,6 +193,27 @@ authz
 sign_viewer, sign_owner, oauth_service_name, oauth_token_name, oauth_request_token, oauth_request_token_secret, oauth_use_token
   **実装されていません**
 
+取得されるデータの例
+====================
+
+::
+
+  {
+    "content": "...",
+    "headers": {
+      "Connection": "close", 
+      "Content-encoding": "gzip", 
+      "Content-length": "8546", 
+      "Content-type": "application/json; charset=utf-8", 
+      "Date": "Tue, 21 Jun 2011 10:50:43 GMT", 
+      "Last-modified": "Tue, 21 Jun 2011 10:50:43 GMT", 
+      "Pragma": "no-cache", 
+      "Status": "200 OK", 
+      "Vary": "Accept-Encoding", 
+    }, 
+    "status": 200
+  }
+
 使用例
 ======
 

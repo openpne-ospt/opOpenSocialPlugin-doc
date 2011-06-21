@@ -72,6 +72,25 @@ url (String)
 mediaItems (Array.<opensocial.MediaItem>)
   アクティビティに設定するメディア。画像のURLを指定するとアクティビティ閲覧時に指定された画像が表示されます。 ``{url: "http://example.com/image.png", mimeType: "image/png"}`` のように指定してください。
 
+取得されるデータの例
+====================
+
+::
+
+  {
+    "id": "1",
+    "userId": "1",
+    "title": "hello!",
+    "postedTime": "2011-06-02T21:29:57+09:00",
+    "url": "http://sns.example.com/application/canvas/1",
+    "mediaItems": [
+      {
+        "url": "http://example.com/image.png",
+        "type": "image/png"
+      }
+    ]
+  }
+
 使用例
 ======
 

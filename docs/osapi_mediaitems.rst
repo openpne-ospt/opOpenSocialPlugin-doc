@@ -16,6 +16,43 @@ osapi.mediaitems.get()
 アルバムに登録されている画像を取得します。
 opAlbumPlugin がインストールされていないSNSでは使用できません。
 
+取得されるデータの例
+====================
+
+::
+
+  {
+    "startIndex": 0,
+    "totalResults": 2,
+    "itemsPerPage": 20,
+    "list": [
+      {
+        "albumId": "1",
+        "created": "2011-06-03 20:54:18",
+        "description": "foo",
+        "fileSize": "0",
+        "id": "1",
+        "lastUpdated": "2011-06-03 20:54:18",
+        "thumbnailUrl": "http://sns.example.com/cache/img/png/w180_h180/a_1_36faf228906a240477755f171051290b018d5a17_png.png",
+        "title": "foo",
+        "type": "IMAGE",
+        "url": "http://sns.example.com/cache/img/png/w_h/a_1_36faf228906a240477755f171051290b018d5a17_png.png"
+      },
+      {
+        "albumId": "1",
+        "created": "2011-06-03 20:55:15",
+        "description": "bar",
+        "fileSize": "0",
+        "id": "2",
+        "lastUpdated": "2011-06-03 20:55:15",
+        "thumbnailUrl": "http://sns.example.com/cache/img/png/w180_h180/a_1_18a0cf3b55454e165743349fc63b43bcc45fb417_png.png",
+        "title": "bar",
+        "type": "IMAGE",
+        "url": "http://sns.example.com/cache/img/png/w_h/a_1_18a0cf3b55454e165743349fc63b43bcc45fb417_png.png"
+      }
+    ]
+  }
+
 使用例
 ======
 
