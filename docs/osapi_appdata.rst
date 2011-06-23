@@ -69,20 +69,37 @@ groupId に @friends を指定した場合はこのように複数人のデー�
 
 .. code-block:: javascript
 
-  osapi.appdata.update({
+  var params = {
     data: {
       foo: "aaa",
       bar: "bbb"
     }
-  })
+  };
+  osapi.appdata.update(params).execute(function (data) {
+    if (data.error) {
+      // 保存に失敗した場合の処理
+      return;
+    }
+
+    // 保存に成功した後の処理
+  });
 
 保存したデータを読み出す例:
 
 .. code-block:: javascript
 
-  osapi.appdata.get({
-    keys: ["foo"]
-  })
+  osapi.appdata.get({keys: ["foo"]}).execute(function (data) {
+    if (data.error) {
+      // 取得に失敗した場合の処理
+    }
+
+    for (var member_id in data) {
+      var appdata = data[member_id];
+
+      // 取得したデータに対する処理
+      // appdata['foo'] のように読み出す。
+    }
+  });
 
 他のメンバーのデータを読み出す場合は、そのメンバーが VIEWER のフレンドかつアプリを所有している必要があります。
 
@@ -90,8 +107,13 @@ groupId に @friends を指定した場合はこのように複数人のデー�
 
 .. code-block:: javascript
 
-  osapi.appdata.delete({
-    keys: ["bar"]
-  })
+  osapi.appdata.delete({keys: ["bar"]}).execute(function (data) {
+    if (data.error) {
+      // 削除に失敗した場合の処理
+      return;
+    }
+
+    // 削除に成功した後の処理
+  });
 
 keys を省略すると、保存されている全てのデータが削除されます。
