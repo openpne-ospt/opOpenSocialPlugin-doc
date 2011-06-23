@@ -109,6 +109,8 @@ opensocial.newDataRequest()
 
   :returns: :js:class:`opensocial.DataRequest`
 
+.. note:: このメソッドの一部の処理は :doc:`OSAPI </docs/osapi_about>` を使用して置き換え可能です。
+
 新規に :js:class:`opensocial.DataRequest` オブジェクトを作成します。DataRequestを使用してSNSに対してリクエストを送信する場合は最初にこのメソッドを実行します。
 
 opensocial.newIdSpec()
@@ -118,6 +120,8 @@ opensocial.newIdSpec()
 
   :param Map.<opensocial.IdSpec.Field|Object> parameters: 作成する IdSpec オブジェクトのパラメータ
   :returns: :js:class:`opensocial.IdSpec`
+
+.. note:: メンバー情報の取得は :doc:`/docs/osapi_people` で置き換え可能です。
 
 新規に :js:class:`opensocial.IdSpec` オブジェクトを作成します。パラメータに使用できるフィールドは :js:class:`opensocial.IdSpec.Field` を参照して下さい。
 
