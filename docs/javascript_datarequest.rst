@@ -63,6 +63,8 @@ newFetchActivitiesRequest()
   :param Map.<opensocial.DataRequest.ActivityRequestFields|Object> opt_params: アクティビティ取得のためのオプション
   :returns: リクエストオブジェクト
 
+.. note:: この処理は :doc:`/docs/osapi_activities` で置き換え可能です。
+
 アクティビティを取得します。
 
 newFetchAlbumsRequest()
@@ -73,6 +75,8 @@ newFetchAlbumsRequest()
   :param opensocial.IdSpec An: 取得するアルバムの所有者
   :param Map.<String|String> opt_params: アルバム取得のためのオプション
   :returns: リクエストオブジェクト
+
+.. note:: この処理は :doc:`/docs/osapi_albums` で置き換え可能です。
 
 アルバムを取得します。
 
@@ -86,6 +90,8 @@ newFetchMediaItemsRequest()
   :param Map.<String|String> opt_params: MediaItem 取得のためのオプション
   :returns: リクエストオブジェクト
 
+.. note:: この処理は :doc:`/docs/osapi_mediaitems` で置き換え可能です。
+
 アルバム内の MediaItem を取得します。
 
 newFetchPeopleRequest()
@@ -96,6 +102,8 @@ newFetchPeopleRequest()
   :param opensocial.IdSpec idSpec: 取得するメンバー
   :param Map.<opensocial.DataRequest.PeopleRequestFields|Object> opt_params: 取得時のオプション
   :returns: リクエストオブジェクト
+
+.. note:: この処理は :doc:`/docs/osapi_people` で置き換え可能です。
 
 メンバー情報の一覧を取得します。
 
@@ -110,6 +118,8 @@ newFetchPersonAppDataRequest()
   :param Map.<opensocial.DataRequest.DataRequestFields|Object> opt_params: 取得時のオプション
   :returns: リクエストオブジェクト
 
+.. note:: この処理は :doc:`/docs/osapi_appdata` で置き換え可能です。
+
 アプリの保存しているデータを取得します。
 
 newFetchPersonRequest()
@@ -121,6 +131,8 @@ newFetchPersonRequest()
   :param Map.<opensocial.DataRequest.PeopleRequestFields|Object> opt_params: 取得時のオプション
   :returns: リクエストオブジェクト
 
+.. note:: この処理は :doc:`/docs/osapi_people` で置き換え可能です。
+
 メンバー情報を取得します。
 
 newRemovePersonAppDataRequest()
@@ -131,6 +143,8 @@ newRemovePersonAppDataRequest()
   :param keys: 削除するデータのキー
   :type keys: Array.<String> | String
   :returns: リクエストオブジェクト
+
+.. note:: この処理は :doc:`/docs/osapi_appdata` で置き換え可能です。
 
 アプリの保存しているデータを削除します。
 
@@ -167,6 +181,8 @@ newUpdatePersonAppDataRequest()
   :param String key: 更新するデータのキー
   :param Object value: 更新後のデータ
   :returns: リクエストオブジェクト
+
+.. note:: この処理は :doc:`/docs/osapi_appdata` で置き換え可能です。
 
 アプリの保存しているデータを更新します。
 

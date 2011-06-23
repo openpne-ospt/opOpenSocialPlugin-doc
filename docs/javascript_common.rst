@@ -86,6 +86,8 @@ opensocial.newActivity()
   :param Map.<opensocial.Activity.Field|Object> params: 作成するアクティビティのパラメータ
   :returns: :js:class:`opensocial.Activity`
 
+.. note:: アクティビティの投稿は :doc:`/docs/osapi_activities` で置き換え可能です。
+
 新規に :js:class:`opensocial.Activity` オブジェクトを作成します。パラメータに使用できるフィールドの一覧は :js:class:`opensocial.Activity.Field` を参照して下さい。なお :js:data:`opensocial.Activity.Field.TITLE` は必須フィールドとなっています。
 
 作成したアクティビティをSNSへ送信するためにはさらに :js:func:`opensocial.requestCreateActivity` を呼び出す必要があります。
@@ -109,6 +111,8 @@ opensocial.newDataRequest()
 
   :returns: :js:class:`opensocial.DataRequest`
 
+.. note:: このメソッドは :doc:`OSAPI </docs/osapi_about>` を使用して置き換え可能です。
+
 新規に :js:class:`opensocial.DataRequest` オブジェクトを作成します。DataRequestを使用してSNSに対してリクエストを送信する場合は最初にこのメソッドを実行します。
 
 opensocial.newIdSpec()
@@ -118,6 +122,8 @@ opensocial.newIdSpec()
 
   :param Map.<opensocial.IdSpec.Field|Object> parameters: 作成する IdSpec オブジェクトのパラメータ
   :returns: :js:class:`opensocial.IdSpec`
+
+.. note:: メンバー情報の取得は :doc:`/docs/osapi_people` で置き換え可能です。
 
 新規に :js:class:`opensocial.IdSpec` オブジェクトを作成します。パラメータに使用できるフィールドは :js:class:`opensocial.IdSpec.Field` を参照して下さい。
 
@@ -165,6 +171,8 @@ opensocial.requestCreateActivity()
   :param opensocial.Activity activity: 送信するアクティビティ
   :param opensocial.CreateActivityPriority priority: アクティビティの優先度
   :param Function opt_callback: コールバック
+
+.. note:: アクティビティの投稿は :doc:`/docs/osapi_activities` で置き換え可能です。
 
 アクティビティを送信します。送信に使用する :js:class:`opensocial.Activity` オブジェクトは :js:func:`opensocial.newActivity()` メソッドを使用して生成して下さい。
 
