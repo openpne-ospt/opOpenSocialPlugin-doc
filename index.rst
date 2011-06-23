@@ -86,6 +86,10 @@ JavaScript API (opensocial.*)
    docs/javascript_mediaitem
    docs/javascript_mediaitem_field
    docs/javascript_mediaitem_type
+   docs/javascript_idspec
+   docs/javascript_idspec_field
+   docs/javascript_idspec_groupid
+   docs/javascript_idspec_personid
 
 RESTful API
 ~~~~~~~~~~~
