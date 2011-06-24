@@ -17,7 +17,7 @@ opOpenSocialPluginについて
 
 opOpenSocialPluginはOpenPNE3上で、OpenSocialのAPI、ガジェットアプリをサポートするためのプラグインです。
 
-opOpenSocialPlugin1.2.x（開発版は1.1.x)では以下の機能をサポートしています。
+opOpenSocialPlugin1.4.x（開発版は1.3.x)では以下の機能をサポートしています。
 
 * 利用可能API (OpenSocial **0.9** 準拠)
     * Person API
