@@ -38,7 +38,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'OpenSocial with OpenPNE'
-copyright = u'2009-2011, Shogo Kawahara'
+copyright = u'2009-2011, OpenPNE Project'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -173,7 +173,7 @@ htmlhelp_basename = 'OpenSocialwithOpenPNEdoc'
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
   ('index', 'OpenSocialwithOpenPNE.tex', u'OpenSocial with OpenPNE Documentation',
-   u'Shogo Kawahara', 'manual'),
+   u'OpenPNE Project', 'manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
