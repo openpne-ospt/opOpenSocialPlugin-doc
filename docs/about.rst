@@ -40,9 +40,11 @@ opOpenSocialPlugin1.2.x（開発版は1.1.x)では以下の機能をサポート
 著者について
 ============
 
-opOpenSocialPluginのリードコミッターである、Shogo Kawahara (川原翔吾) が作成しています。
+Shogo Kawahara (川原翔吾)
+  * Twitter: ooharabucyou
+  * Mail: kawahara@bucyou.net
 
-このドキュメントについての連絡は以下にお願いします。
+Kimura Youichi
+  * Twitter: kim_upsilon
+  * Mail: kim.upsilon@bucycou.net
 
-* Twitter: ooharabucyou
-* Mail: kawahara@bucyou.net
