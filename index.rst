@@ -3,9 +3,15 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-=======================
-OpenSocial with OpenPNE
-=======================
+============================================
+OpenPNE OpenSocial Platform ユーザーズガイド
+============================================
+
+OpenPNE OpenSocial Platform ユーザーズガイドへようこそ！
+
+このドキュメントは、OpenPNEをOpenSocialコンテナとして構築し、OpenSocialアプリケーションを動作させる為に必要な情報を提供します。
+
+それでは自由なソフトウェアで自由な開発を楽しんでください！
 
 目次
 ====
@@ -17,8 +23,8 @@ OpenSocial with OpenPNE
    docs/history
 
 
-サーバ管理者向け
-----------------
+OpenSocial コンテナの構築
+-------------------------
 
 .. toctree::
    :maxdepth: 2
@@ -26,15 +32,42 @@ OpenSocial with OpenPNE
    docs/setup
    docs/use_application
 
+フィーチャーフォン版OpenSocialアプリケーションの開発
+----------------------------------------------------
 
+アプリケーションの登録
+~~~~~~~~~~~~~~~~~~~~~~
 
-アプリ開発者向け
-----------------
+処理の流れ
+~~~~~~~~~~
+
+APIリファレンス
+~~~~~~~~~~~~~~~
+
+.. toctree::
+   :maxdepth: 2
+
+   docs/restful_api
+   docs/restful_people
+   docs/restful_activities
+   docs/restful_appdata
+   docs/restful_albums
+
+その他
+~~~~~~
 
 .. toctree::
    :maxdepth: 2
 
    docs/signature
+   docs/lifecycle_event
+
+PC版OpenSocialアプリケーションの開発
+------------------------------------
+
+.. toctree::
+   :maxdepth: 2
+
    docs/gadget
    docs/lifecycle_event
 
