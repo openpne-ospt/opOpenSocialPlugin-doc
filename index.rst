@@ -16,6 +16,9 @@ OpenPNE OpenSocial Platform ユーザーズガイドへようこそ！
 目次
 ====
 
+はじめに
+--------
+
 .. toctree::
    :maxdepth: 2
 
@@ -86,7 +89,7 @@ JavaScript API (opensocial.*)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
 
    docs/javascript_api
    docs/javascript_common
