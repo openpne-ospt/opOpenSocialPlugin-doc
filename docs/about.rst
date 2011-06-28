@@ -48,3 +48,7 @@ Kimura Youichi
   * Twitter: kim_upsilon
   * Mail: kim.upsilon@bucycou.net
 
+Kunitada Ryosuke
+  * Twitter: kunitada
+  * Mail: kunitada@tejimaya.com
+
