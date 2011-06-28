@@ -37,7 +37,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'OpenSocial with OpenPNE'
+project = u'opOpenSocialPlugin'
 copyright = u'2009-2011, OpenPNE Project'
 
 # The version info for the project you're documenting, acts as replacement for
